@@ -16,3 +16,6 @@ innego generatora parserów).
 Składnia abstrakcyjna może być nieco inna
 (np. BNFC w pewnym sensie narzuca składnię abstrakcyjną).
 
+## Zadanie 3
+
+Napisz parser dla swojego języka (dowolną techniką). Dla parsera LR (BNFC, Happy, etc.) zwróć uwagę na konflikty.
