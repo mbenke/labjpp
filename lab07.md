@@ -1,18 +1,49 @@
-## Zadanie 1.
-a. Napisz lekser dla składni konkretnej wyrażeń zaprojektowanej w
-poprzednim tygodniu.
+## Przygotowanie
 
-b. Zmodyfikuj swoj parser tak by działał na poziomie leksemów, a nie
-pojedynczych znaków.
+* Przy pomocy `Text.ParserCombinators.Parsec` uruchomić `pNat`, `pInt` z wykładu, przy czym
 
-c. Rozszerz lekser i parser o literały dla liczb zmiennoprzecinkowych
-(wystarczy format 123.456, ale dla bardziej ambitnych także 1.2e-3)
+```
+sat = satisfy
+item = anyChar
+```
+
+* Uruchomić parser dla wyrażeń arytmetycznych z wykładu
+
+## Zadanie 1
+Dana składnia abstrakcyjna wyrażeń arytmetycznych (jak w 2. tygodniu)
+
+    data Exp
+          = EInt Int             -- stała całkowita
+	        | EAdd Exp Exp         -- e1 + e2
+		      | ESub Exp Exp         -- e1 - e2
+		            | EMul Exp Exp         -- e1 * e2
+			          | EVar String          -- zmienna
+				        | ELet String Exp Exp  -- let var = e1 in e2
+
+a. zaprojektuj składnię konkretną
+Sugestie: standardowa notacja infiksowa oraz notacja prefiksowa a la Lisp: (* (+ 1 2) 3)
+
+b. napisz parser dla tej składni przy uzyciu `Text.ParserCombinators.Parsec`
+
+UWAGA: Ze względów wydajnościowych, operator (<|>) z biblioteki Parsec
+jest prawie deterministyczny i nie będzie działać dobrze dla
+produkcji, które mają wspólny (niepusty) prefiks.
+
+Możemy odzyskać niedeterminizm przy pomocy kombinatora try, np.
+
+    try p <|> q
 
 ## Zadanie 2
-Napisz parser dla składni konkretnej wyrażeń zaprojektowanej w
-poprzednim tygodniu przy uzyciu BNFC (lub, jeśli ktoś bardzo chce,
-innego generatora parserów). 
+Napisz własne wersje kombinatorów parsujących użytych w poprzednim zadaniu
 
-Składnia abstrakcyjna może być nieco inna
-(np. BNFC w pewnym sensie narzuca składnię abstrakcyjną).
+Sugestie:
+
+    newtype Parser a = Parser { runParser :: String -> [(a,String)] }
+        newtype Parser a = Parser {
+	      runParser :: String -> [Either ErrorMessage (a,String)]
+	          }
+
+albo, używając transformatorów monad
+
+    type Parser a = StateT [Char] (ErrorT String []) a
 
