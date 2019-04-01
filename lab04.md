@@ -137,6 +137,18 @@ która zwraca nieużywaną lokację.
 
 a. Zaimplementuj moduły StateTParser i SimpleParsers z wykładu
 
+```
+type Parser a = StateT [Char] Maybe a
+runParser :: Parser a -> Maybe (a, [Char])
+
+item :: Parser Char
+sat :: (Char->Bool) -> Parser Char
+many, many1 :: Parser a -> Parser [a]
+pDigit, pNat :: Parser Int
+
+test123 = runParser pNat "123 ala"
+```
+
 b. Zaimplementuj moduł IdentityTrans dostarczający identycznościowego 
 transformatora IdentityT:
 
