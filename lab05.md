@@ -1,3 +1,12 @@
+## Przygotowanie
+
+* Przy pomocy `Text.Parsec` uruchomić `pNat`, `pInt` z wykładu, przy czym
+
+```
+sat = satisfy
+item = anyChar
+```
+
 ## Zadanie 1
 Dana składnia abstrakcyjna wyrażeń arytmetycznych (jak w 2. tygodniu)
 
