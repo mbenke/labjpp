@@ -12,7 +12,7 @@ Dana składnia abstrakcyjna wyrażeń arytmetycznych (jak w 2. tygodniu)
 a. zaprojektuj składnię konkretną
 Sugestie: standardowa notacja infiksowa oraz notacja prefiksowa a la Lisp: (* (+ 1 2) 3)
 
-b. napisz parser dla tej składni przy uzyciu Text.ParserCombinators.Parsec
+b. napisz parser dla tej składni przy uzyciu Text.Parsec
 
 UWAGA: Ze względów wydajnościowych, operator (<|>) z biblioteki Parsec
 jest prawie deterministyczny i nie będzie działać dobrze dla
