@@ -1,5 +1,5 @@
-Uwaga: na poniższe zadania mozna przeznaczyć 3, a w miarę potrzeby i
-mozliwości nawet 4 zajęcia.
+Uwaga: na poniższe zadania można przeznaczyć 3, a w miarę potrzeby i
+możliwości nawet 4 zajęcia.
 
 ## Zadanie 1. Monada List
 
