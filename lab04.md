@@ -127,8 +127,10 @@ Stmt: S ::= ... | begin [D] S end
 Decl: D ::= var x=e;
 ~~~
 
-Tutaj dla obliczania Stmt najlepiej użyć jednocześnie monady Reader i State: część Reader odczytuje funkcje z Var w nowy typ "lokacji pamięci" Loc(=Int), a część State operuje na funkcjach z Loc w Int, implementowanych jako mapy. Trzeba też zaimplementować funkcję
+Tutaj dla obliczania Stmt najlepiej użyć jednocześnie monady Reader i State: część Reader odczytuje funkcje z `Var` w nowy typ "lokacji pamięci" `Loc(=Int)`, a część State operuje na funkcjach z `Loc` w `Int`, implementowanych jako mapy. Trzeba też zaimplementować funkcję
+```
 alloc :: (Map Loc Int) -> Loc
+```
 która zwraca nieużywaną lokację.
 
 ## Zadanie 4.  Transformatory monad
@@ -146,7 +148,10 @@ transformatora IdentityT:
 
 c. Zaimplementuj moduł MaybeTrans dostarczający transformatora MaybeT - analogicznie jak wyżej, za wyjatkiem 
 
+```
     instance MonadPlus (MaybeT m) ...
+```    
+gdzie teraz dajemy wynik pierwszego z obliczeń, które zakończyło się sukcesem.
 
 d. Zaimplementuj moduł StateTParser2 z wykładu:
 
