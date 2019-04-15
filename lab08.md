@@ -49,7 +49,7 @@ State 6
 	%eof           reduce using rule 3
 
 
-$ sed  s/-gca/-gcad/ Makefile > Makefile.debug
+$ sed  's/happy -gca/happy -gcad/' Makefile > Makefile.debug
 $ make -f Makefile.debug
 $ echo "1+2+3" | ./TestBadExp
 state: 0,	token: 2,	action: shift, enter state 2
