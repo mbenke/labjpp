@@ -9,10 +9,28 @@
  + zaznaczanie `C-spacja`, kopiowanie `M-w` wycinanie `C-w` wklejanie `C-y`  
  + więcej: [EmacsWiki](http://www.emacswiki.org/emacs/), [UChicago Emacs tutorial](http://www2.lib.uchicago.edu/keith/tcl-course/emacs-tutorial.html)
  + dla tych, którzy wczesniej uzywali vima, jest [evil mode](http://www.emacswiki.org/emacs/Evil) i [spacemacs](https://github.com/syl20bnr/spacemacs)
+ 
+### Haskell
+Instalacja na własnym laptopie: zalecane zainstalowanie stack - https://haskellstack.org
+
+Po instalacji
+```
+$ stack setup # to potrwa chwilę
+$ stack ghci
+```
+
+Kompilować można przez `stack ghc -- argumenty` albo
+
+```
+$ PATH=$PATH:$(stack path --compiler-bin)
+```
+
+
 ### ghci
+
  + uruchamianie
  + obliczanie wyrażeń
- + podstawowe komendy: :h[elp] :t[ype] :l[oad] :r[eload] :q[uit
+ + podstawowe komendy: :h[elp] :t[ype] :l[oad] :r[eload] :q[uit]
  + odkrywamy Haskell (notatki na moodle)
 ew.  tutorial: [Learn You A Haskell](http://learnyouahaskell.com/starting-out)
 
