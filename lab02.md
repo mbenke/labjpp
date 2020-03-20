@@ -50,8 +50,9 @@ Wskazówki: `succ '0' == '1'` itd; dzielenie całkowite to `div`
     import Data.Char(ord,chr)   
 ~~~~
 
-Napisz program, który podzieli tekst otrzymany na wejściu na linie długości nie większej niż zadana stała (np. 30)
+Napisz program, który podzieli tekst otrzymany na wejściu na linie długości nie większej niż zadana stała (np. 30).
 
+Napisz program, który wypisze wszystkie pozycje litery 'a' w swoim wejściu.
 
 ## Zadanie 1
 
