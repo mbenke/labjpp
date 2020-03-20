@@ -58,9 +58,14 @@ Napisz program, który podzieli tekst otrzymany na wejściu na linie długości 
 Napisz funkcje
 
 ```
-foldEither :: (a  -> c) -> (b -> c) -> Either a b -> c
+elimMaybe :: c -> (a -> c) -> Maybe a -> c
+fromMaybe :: a -> Maybe a -> a
+mapMaybe :: (a -> b) -> Maybe a -> Maybe b
+maybeHead :: [a] -> Maybe a
+elimEither :: (a  -> c) -> (b -> c) -> Either a b -> c
 mapEither :: (a1 -> a2) -> (b1 -> b2) -> Either a1 b1 -> Either a2 b2
 mapRight ::  (b1 -> b2) -> Either a b1 -> Either a b2
+fromEither :: Either a a -> a
 ```
 
 oraz
