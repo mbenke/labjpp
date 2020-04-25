@@ -129,7 +129,9 @@ Stmt: S ::= ... | begin [D] S end
 Decl: D ::= var x=e;
 ~~~
 
-Tutaj dla obliczania `Stmt` najlepiej użyć jednocześnie monady Reader i State: część Reader odczytuje funkcje z `Var` w nowy typ "lokacji pamięci" `Loc` (wystarczy `type Loc=Int`), a część `State` operuje na mapowaniach z `Loc` w `Int`. Trzeba też zaimplementować funkcję
-`alloc :: (Map Loc Int) -> Loc`,
-która zwraca nieużywaną lokację.
+Tutaj dla obliczania `Stmt` najlepiej użyć jednocześnie monady Reader i State:
+część Reader odczytuje funkcje z `Var` w nowy typ "lokacji pamięci" `Loc`
+(wystarczy `type Loc=Int`), a część `State` operuje na mapowaniach
+z `Loc` w `Int`. Trzeba też zaimplementować funkcję
+`alloc :: (Map Loc Int) -> Loc`, która zwraca nieużywaną lokację.
 
