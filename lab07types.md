@@ -43,14 +43,15 @@ Jako skladni abstrakcyjnej można uzyć na przykład
 
     intOmega = mkOmega TInt
 
-    -----------------------------------------------------------------
-    -- Koniec IntLambda
-    -----------------------------------------------------------------
 
 W pierwszej wersji mozna użyć po prostu error do raportowania błedów, 
 potem jednak lepiej zrobić lepsze raportowanie, np z ErrorT
 
 Przykładowa sesja:
+
+```
+    *Main> typeOf (EInt 42)
+    Right int
 
     *Main> typeCheck intK
     int -> int -> int
@@ -79,4 +80,73 @@ Przykładowa sesja:
     int -> int
     against inferred
     int -> int -> int
+```
+
+Z rekonstrukcją typów:
+
+```
+data Exp = EInt Int | EVar Name 
+         | ELam Name Exp | EApp Exp Exp
+
+-- Przykładowe lambda-termy
+
+
+mkI :: Exp
+mkI = ELam "x" $ EVar "x"
+
+mkK :: Exp
+mkK = ELam "x" $ ELam "y" $ EVar "x"
+
+
+mkS :: Exp
+mkS = ELam "x" $ ELam "y" $ ELam "z"
+          $ EApp 
+             (EApp (EVar "x") (EVar "z")) 
+             (EApp (EVar "y") (EVar "z")) 
+
+k7 :: Exp
+k7 = EApp mkK (EInt 7)
+
+-- kombinator omega nie typuje sie w prostym rachunku lambda
+mkOmega :: Exp
+mkOmega = ELam "x" $ EApp (EVar "x") (EVar "x")
+```
+
+Przykładowa sesja:
+
+```
+*CurryTypes> typeOf k7
+Right (b -> int)
+
+*CurryTypes> typeCheck $ EApp (EInt 7) (EInt 7)
+Error: 
+Type error in
+7 7
+types 'int' and 'int -> a' do not unify~
+
+*CurryTypes> typeCheck mkOmega
+Error: 
+Type error in
+\x->x x
+Cannot construct the infinite type: "a" ~ a -> b
+```
+
+Z polimorficznym `let`:
+
+```
+data Exp = EInt Int | EVar Name
+         | ELam Name Exp | EApp Exp Exp
+         | ELet Name Exp Exp -- let x=e1 in e2
+
+letOmega :: Exp
+letOmega = ELet "x" (mkI' "z") (EApp (EVar "x") (EVar "x"))
+```
+
+```
+*Main> letOmega
+let x = \z->z in x x
+*Main> typeCheck letOmega
+c -> c
+```
+
 
