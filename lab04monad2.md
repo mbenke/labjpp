@@ -1,5 +1,5 @@
-Uwaga: na poniższe zadania można przeznaczyć 3, a w miarę potrzeby i
-możliwości nawet 4 zajęcia.
+Uwaga: na poniższe zadania mozna przeznaczyć 3, a w miarę potrzeby i
+mozliwości nawet 4 zajęcia.
 
 ## Zadanie 1. Monada List
 
@@ -23,6 +23,8 @@ należy do pierwszego argumentu, drugi do drugiego, np.
 Main> allCombinations [[1,2], [4,5], [6], [7]]  
 [[1,4,6,7],[1,5,6,7],[2,4,6,7],[2,5,6,7]]
 ~~~~
+
+Jak najprościej zapisać `allCombinations` przy pomocy poznanych operacji monadycznych?
 
 ## Zadanie 2. Reader
 
@@ -127,93 +129,7 @@ Stmt: S ::= ... | begin [D] S end
 Decl: D ::= var x=e;
 ~~~
 
-Tutaj dla obliczania Stmt najlepiej użyć jednocześnie monady Reader i State: część Reader odczytuje funkcje z `Var` w nowy typ "lokacji pamięci" `Loc(=Int)`, a część State operuje na funkcjach z `Loc` w `Int`, implementowanych jako mapy. Trzeba też zaimplementować funkcję
-```
-alloc :: (Map Loc Int) -> Loc
-```
+Tutaj dla obliczania `Stmt` najlepiej użyć jednocześnie monady Reader i State: część Reader odczytuje funkcje z `Var` w nowy typ "lokacji pamięci" `Loc` (wystarczy `type Loc=Int`), a część `State` operuje na mapowaniach z `Loc` w `Int`. Trzeba też zaimplementować funkcję
+`alloc :: (Map Loc Int) -> Loc`,
 która zwraca nieużywaną lokację.
 
-## Zadanie 4.  Transformatory monad
-
-a. Zaimplementuj moduły StateTParser i SimpleParsers z wykładu
-
-```
-type Parser a = StateT [Char] Maybe a
-runParser :: Parser a -> Maybe (a, [Char])
-
-item :: Parser Char
-sat :: (Char->Bool) -> Parser Char
-many, many1 :: Parser a -> Parser [a]
-pDigit, pNat :: Parser Int
-
-test123 = runParser pNat "123 ala"
-```
-
-b. Zaimplementuj moduł IdentityTrans dostarczający identycznościowego 
-transformatora IdentityT:
-
-    newtype IdentityT = ...
-    instance (Functor m) => Functor (IdentityT m) where
-    instance (Monad m) => Monad (IdentityT m) ...
-    instance MonadTrans IdentityT ...
-    instance MonadPlus m => MonadPlus (IdentityT m) ...
-
-c. Zaimplementuj moduł MaybeTrans dostarczający transformatora MaybeT - analogicznie jak wyżej, za wyjatkiem 
-
-```
-    instance MonadPlus (MaybeT m) ...
-```    
-gdzie teraz dajemy wynik pierwszego z obliczeń, które zakończyło się sukcesem.
-
-d. Zaimplementuj moduł StateTParser2 z wykładu:
-
-~~~~
-module StateTParser2(Parser,runParser,item) where
-import Control.Monad.State
-import MaybeTrans
-import Control.Monad.Identity
-
--- Use the StateT transformer on MaybeT on Identity
-type Parser a = StateT [Char] (MaybeT Identity) a
-
-runParser :: Parser a -> [Char] -> Maybe (a,String)
-item :: Parser Char
-~~~~
-
- i przetestuj go z SimpleParsers (zastępując import StateTParser przez import StateTParser2)
-
-~~~~
-module SimpleParsers where
-import Data.Char(isDigit,digitToInt)
-import Control.Monad
-
-import StateTParser2
-
-pDigit1 :: Parser Int
-pDigit1 = item >>= test where
-  test x | isDigit x = return $ digitToInt x
-         | otherwise = mzero
-
-sat :: (Char->Bool) -> Parser Char
-sat p = do {x <- item; if p x then return x else mzero}
-
-char :: Char -> Parser Char
-char x = sat (==x)
-
-pDigit :: Parser Int
-pDigit = fmap digitToInt $ sat isDigit
-
-pDigits :: Parser [Int]
-pDigits = many pDigit
-
-pNat :: Parser Int 
--- pNat = pDigits >>= return . foldl (\x y -> 10*x+y) 0
-pNat = fmap (foldl (\x y -> 10*x+y) 0) pDigits
-
-many :: Parser a -> Parser [a]
-many p = many1 p `mplus` return []
-
-many1 p = do { a <- p; as <- many p; return (a:as)}
-
-test123 = runParser pNat "123 ala"
-~~~~
