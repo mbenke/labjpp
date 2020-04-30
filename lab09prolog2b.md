@@ -69,6 +69,27 @@ suma2([],A,A).
 suma2([X|Xs],A,N) :- A1 is A+X, suma2(Xs,A1,N).
 suma2(Xs,N) :- suma2(Xs,0,N).
 ```
+## Napisy
+
+Patrz też https://www.swi-prolog.org/pldoc/man?section=strings
+
+```
+$ swipl
+?- L=`kajak`.
+L = [107, 97, 106, 97, 107].
+
+?- L="kajak".
+L = "kajak".
+
+$ swipl --traditional
+
+?- write("kajak").
+[107,97,106,97,107]
+true.
+
+?- write(`kajak`).
+ERROR: Syntax error: Operator expected
+```
 
 ## Zadania
 
