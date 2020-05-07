@@ -119,14 +119,37 @@ Zdefiniować predykaty:
 
       (np. `flagaPolska([b,c,b,c], [b,b,c,c])` - sukces)
 
+- rozwiazanie naiwne, bez akumulatora, wielokrotny `append` (koszt kwadratowy)
+- dwa akumulatory (koszyki Dijkstry), jednokrotnie `append`
+    - początkowo puste: 
+    ```
+    fp2(L, F) :- fp2(L, [], [], F).
+    fp2([], B, C, F) :- append(B, C, F).
+    ```
+    - początkowo nieukonkretnione:
+    
+     ```
+     fp3(L, F) :- fp3(L, B, C), append(B, C, F).
+     ```
+
+    - jeden akumulator (na stałe `c`), w ogóle bez `append`:
+    ```
+    fp4(L, F) :- fp4(L, [], F).
+    ```
+
+
  i) ew. `flagaHolenderska(ListaRWB, RWB)` (flaga: red-white-blue)
 
  j) `quickSort(L, S)` wtw, gdy S jest wynikiem sortowania L (algorytm QuickSort)
 
-   * wersja bez akumulatora
+   *  `partition(L, E, M, W)`  podzial L wzgledem E na dwie listy -  Mniejszych i Większych od E
+
+   * wersja bez akumulatora (z append)
 
    * wersja z akumulatorem (czyli bez append)
+   ```
+   qsortA(L, S) :-  qsortA(L, [], S).
+   % qsort(L, A, S) <=>  S = sort(L) ++ A  (konkatenacja)
+   ```
+* dla chętnych: zagwarantować logarytmiczną głebokosc stosu: partition moze dać listy różnej długości, dbamy o to aby dłuższą sortować iteracyjnie (wymaga sprytniejszego partition, które wskaże która lista jest dłuższa)
 
-k) `flatten(L, F)` wtw, gdy L jest zagnieżdżoną listą list, których
-     elementami są liczby całkowite, a F jest spłaszczoną listą L
-      (np. `flatten([1,[[[[2,[3]]], 4], 5]], [1,2,3,4,5])` - sukces)
