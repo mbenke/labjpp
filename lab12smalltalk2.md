@@ -24,6 +24,6 @@ Metoda ma dawać domyślny obiekt klasy `TesterPierwszosci` - za każdym razem t
 Napisz metodę klasową `#jestPierwsza:` wykorzystujacą powyższa metodę `#default`.
 
 W klasie `TesterPierwszosci` umieść metodę klasową `#test` sprawdzającą na pewnej liczbie losowych danych, 
-czy `TesterPierwszosc`i działa prawidłowo. 
-Posłuż się klasą `Random` i klasową metodą `#primesUpTo:` z klasy Integer.
+czy `TesterPierwszosci` działa prawidłowo. 
+Posłuż się klasą `Random` i klasową metodą `#primesUpTo:` z klasy `Integer`.
 
