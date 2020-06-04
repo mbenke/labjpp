@@ -81,7 +81,7 @@ Random new nextInteger: 52
 21
 ```
 
-Teraz możemy posortować talię uzywając [sortowania Knutha](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm)\
+Teraz możemy posortować talię uzywając [tasowania Knutha](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm)
 
 ```
 rnd := Random new. 
