@@ -47,13 +47,13 @@ true.
 
  Na przykład:
 
-    ~~~~
+```
     % dziecko(Dziecko, Matka, Ojciec)
     dziecko(jasio, ewa, jan).
     dziecko(stasio, ewa, jan).
     dziecko(basia, anna, piotr).
     dziecko(jan, ela, jakub).
-    ~~~~
+```
 
  Zdefiniować predykaty:
 
