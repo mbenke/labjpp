@@ -103,8 +103,9 @@ Mozemy na przykład zdefiniować:
 
 ```
 ?- consult(user).
-|    X dzieli Y :- 0 is Y mod X.
-|    ^D% user://1 compiled 0.00 sec, 1 clauses
+|: :- op(300,xfx,dzieli).
+|:    X dzieli Y :- 0 is Y mod X.
+|:    ^D% user://1 compiled 0.00 sec, 1 clauses
 true.
 
 ?- 2 dzieli 4.
@@ -124,7 +125,7 @@ Napisz funkcję  `enumFromTo(M, N, L)` podobnie jak w Haskellu, n.p.
     L = [1, 2, 3, 4, 5, 6, 7, 8].
 ```
 
-Uwaga: prosze spraqdzać czy nie ma nadmiarowych odpowiedzi - błędna implementacja moze dać
+Uwaga: prosze sprawdzać czy nie ma nadmiarowych odpowiedzi - błędna implementacja moze dać
 
 ```
 ?- enumFromTo(1,8,L).
