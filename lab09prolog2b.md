@@ -18,6 +18,7 @@ addone (x:xs) = (x+1):addone xs
 ```
 
 Wynika to z faktu, ze w Prologu najpierw następuje uzgodnienie obu list w głowie klauzuli, potem uzgodnienie `Y` z wartością `X+1`, a a końcu `addone Xs Ys`.
+Taką rekursję nazywamy "ogonowa modulo cons" (tail recursion modulo cons).
 
 Spróbujmy napisać predykat `suma(L,N)`, który odnosi sukces gdy  `N` jest sumą elementów `L`
 
@@ -31,7 +32,7 @@ suma0([X|Xs], X+Y) :- suma0(Xs,Y).
 N = 1+(2+(3+0)).
 ```
 
-nie do końa o to chodziło...niby można
+nie do końca o to chodziło...niby można
 
 ```
 ?- suma0([1,2,3], W), N is W.
@@ -69,10 +70,15 @@ suma2([],A,A).
 suma2([X|Xs],A,N) :- A1 is A+X, suma2(Xs,A1,N).
 suma2(Xs,N) :- suma2(Xs,0,N).
 ```
+NB w Haskellu pomocnicza funkcja z akumulatorem miała by inną nazwę;
+w Prologu nie jest to potrzebne - `suma/2` i `suma/3` to różne predykaty.
+
 ## Napisy
 
-Patrz też https://www.swi-prolog.org/pldoc/man?section=strings
 
+Patrz też https://www.swi-prolog.org/pldoc/man?section=string
+
+SWI Prolog ma swoiste podejście do napisów, odmienne od innych implementacji Prologu:
 ```
 $ swipl
 ?- L=`kajak`.
@@ -81,6 +87,12 @@ L = [107, 97, 106, 97, 107].
 ?- L="kajak".
 L = "kajak".
 
+```
+NB w pierwszym przykładzie odwrócone apostrofy (w zwykłych apostrofach - atomy).
+
+Tradycyjne podejście do napisów jako list bajtów możemy odzyskać z opcją `--traditional`:
+
+```
 $ swipl --traditional
 
 ?- write("kajak").
