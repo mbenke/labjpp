@@ -74,9 +74,9 @@ L = [0, 1, 2, 3].
     * kiedy już napiszemy `split3` możemy zauważyć, że łatwo się bez niego obejść :)
 
 * Zdefiniuj predykat `walk(+T, ?L)` taki, że `L` jest listą wierzchołków `T`  w porządku infiksowym.
-    * Czy `walk` mozna uzyć zamiast `tad` do generacji drzew?
-<!--    * Czy `tad` mozna uzyc do generacji wierzcholków drzewa? -->
-    * Czym się róznią?
+    * Czy `walk` mozna uzyć zamiast `tad` do generacji drzew (np. `walk(T,[1,2,3])`)?
+    * Czy `tad` można użyć z listą nieustaloną, np. `tad(n(e, 1, n(e, 2, n(e, 3, e))),L)`?
+    * Czym się różnią?
 
 ## Drzewa BST
 
