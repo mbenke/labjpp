@@ -169,7 +169,7 @@ P = [a, b, b, d] ;
 P = [a, c, d] ;
 false.
 ```
-ri
+
   d) `euler/?` - czy dany graf nieskierowany jest grafem Eulera, czyli  znalezienie (sprawdzenie) ścieżki Eulera (wprost z definicji):            ścieżka, która przechodzi przez każdą krawędź grafu dokładnie raz.
 
   Dla uproszczenia mozna zacząc z grafem skierowanym, ale uwaga: krawędź nieskierowana `a <-> b` to nie to samo co dwie krawędzie `a -> b, b -> a`.
