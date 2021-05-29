@@ -23,7 +23,7 @@ Z warunków zadania wynika, ze potrzebujemy róznych sposobów wypisywania kolor
 
 Wskazówki: spacja to `Character space`; konkatenacja napisów to przecinek: 
 ```
-'Hello', Character space, 'world'
+'Hello', Character space asString, 'world'
 'Hello world'
 ```
 
