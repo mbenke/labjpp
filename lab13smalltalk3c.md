@@ -61,6 +61,8 @@ displayOn: aStream
 	self printOn: aStream
 ```
 
+NB w Pharo zamiast `displayOn:` używamy  `displayStringOn:`
+
 Strumienie jak mozna się spodziewać mogą służyć do pisania bądź czytania; są tez strumienie które umozliwiają jedno i drugie, ale trochę tu utrudnia sytuacje brak wielodziedziczenia - nie bedziemy się tu tym zajmować. Tytaj skupimy się na strumieniach do zapisu potrzebnych nam w naszym zadaniu. Na marginesie warto tylko wspomnieć, ze widzieliśmy już jedną podklasę `ReadStream` , mianowicie `Random`: strumień liczb losowych.
 
 
@@ -69,9 +71,9 @@ Strumienie jak mozna się spodziewać mogą służyć do pisania bądź czytania
 W Smalltalku bardziej niż pozycja obiektu w hierarchii interesuje nas jego protokół - komunikaty na które odpowiada (i zachowanie w odpowiedzi na te komunkaty). Protokół `WriteStream` realizują też niezwiązane klasy, np. `StdioFileStream` czy `TranscriptShell`. Dobrym sposobem eksperymentowania ze strumieniami jest uzycie okna `Transcript`, np.
 
 ```
-Transcript nextPut: $H; nextPutAll: 'ello'; cr
+Transcript nextPut: $H; nextPutAll: 'ello'; cr; flush
 ```
-NB wypisze się dopiero po `cr` (a dokładniej po wywołanym przez nie `flush`).
+NB wypisze się dopiero po `flush` (w Dolphinie `cr` wywołuje `flush`, w Pharo nie).
 
 * `nextPut: anObject` - wypisz `anObject` do strumienia. Ponieważ tu mamy do czynienia ze strumieniami znaków, w praktyce `anObject` musi byc znakiem.
 * `nextPutAll: aCollection` - wypisz kolejne elementy kolekcji do strumienia; ponieważ napis jest kolekcja, możemy uzyc tego do wypisywania napisów.
@@ -80,13 +82,13 @@ NB wypisze się dopiero po `cr` (a dokładniej po wywołanym przez nie `flush`).
 ```
 Transcript << $H << 'ello'; flush
 ```
-* `space`, `tab`, `cr` - chyba jasne; `cr` wywołuje `flush`
+* `space`, `tab`, `cr` - chyba jasne; w Dolphinie `cr` wywołuje `flush`
 
-Użyteczna sztuczka: `Transcript show` pokaze okno Transcript na wierzchu.
+Użyteczna sztuczka (Dolphin): `Transcript show` pokaze okno Transcript na wierzchu (w Pharo jest `Transcript open` ale otwiera nowe okno).
 
 ### Wracamy do zadania
 
-Zaimplementuj `#displayOn:` i `printOn:` dla swoich klas (usuwając implementacje `#printString`)
+Zaimplementuj `displayOn:` (w Pharo `#displayStringOn:`) i `printOn:` dla swoich klas (usuwając implementacje `printString`)
 
 ```
 Wykonanie fragmentu kodu:
