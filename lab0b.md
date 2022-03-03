@@ -29,9 +29,9 @@
 
     b. Napisz przy pomocy `foldr` (nadaj własne nazwy)
 
-       * silnię (w sumie było na wykładzie)
-       * `and :: [Bool] -> Bool`
-       * `concat :: [[a]] -> [a]`
+    * silnię (w sumie było na wykładzie)
+    * `and :: [Bool] -> Bool`
+    * `concat :: [[a]] -> [a]`
 
     <!-- 
        * `maximum :: [Int] -> Int`
