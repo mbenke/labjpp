@@ -27,9 +27,10 @@
 	*Main Data.List> incAll $ inits [1..3]
 	[[],[2],[2,3],[2,3,4]]
 
-    b. Napisz przy pomocy foldr
+    b. Napisz przy pomocy `foldr` (nadaj własne nazwy)
 
-       * silnię
+       * silnię (w sumie było na wykładzie)
+       * `and :: [Bool] -> Bool`
        * `concat :: [[a]] -> [a]`
 
     <!-- 
