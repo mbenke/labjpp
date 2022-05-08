@@ -105,6 +105,30 @@ true.
 ERROR: Syntax error: Operator expected
 ```
 
+Przykłady użycia napisów do testowania sortowania:
+
+```
+?- string_chars(`fide`, X), sort(X,Y), string_chars(Z,Y).
+X = [f, i, d, e],
+Y = [d, e, f, i],
+Z = "defi".
+
+?- string_chars(`fide`, X), msort(X,Y), string_chars(Z,Y).
+X = [f, i, d, e],
+Y = [d, e, f, i],
+Z = "defi".
+
+?- string_chars(`kajak`, X), sort(X,Y), string_chars(Z,Y).
+X = [k, a, j, a, k],
+Y = [a, j, k],
+Z = "ajk".
+
+?- string_chars(`kajak`, X), msort(X,Y), string_chars(Z,Y).
+X = [k, a, j, a, k],
+Y = [a, a, j, k, k],
+Z = "aajkk".
+```
+
 ## Zadania
 
 Zdefiniować predykaty:
