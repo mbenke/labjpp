@@ -87,6 +87,8 @@ L = [107, 97, 106, 97, 107].
 ?- L="kajak".
 L = "kajak".
 
+?- string_chars("kajak", X).
+X = [k, a, j, a, k].
 ```
 NB w pierwszym przykładzie odwrócone apostrofy (w zwykłych apostrofach - atomy).
 
