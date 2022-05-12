@@ -50,7 +50,7 @@ L = [0, 1, 2, 3].
 
     ```
     ?- tod(2,X).
-    X = node(node(empty, _14, empty, _6, node(empty, _22, empty)).
+    X = node(node(empty, _14, empty), _6, node(empty, _22, empty)).
     ```
 
 * Zdefiniuj predykat `tad(+Xs, -pT)` taki, że `T` jest drzewem, którego obejście w porządku infiksowym da listę `Xs`:
