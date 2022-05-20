@@ -75,6 +75,9 @@ Podobną ideę możemy zastosować w poniższym zadaniu - próba wyjęcia elemen
      ```
 2. `bfs(DrzewoBinarne, ListaWierzchWszerz)`
 
+W razie problemów mozna też zrealizowac kolejkę przy pomocy dwóch list (zamortyzowany koszt stały).
+Wstawiamy do listy In, wyjmujemy z listy Out, a jeśli jest pusta to odwracamy In.
+
 ## Obchodzenie grafu
 
 1. Znajdź wierzchołki osiągalne w grafie (możliwe cykle!) używając BFS.
