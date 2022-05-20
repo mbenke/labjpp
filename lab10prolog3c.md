@@ -74,3 +74,9 @@ Podobną ideę możemy zastosować w poniższym zadaniu - próba wyjęcia elemen
      Q4 = _A-_A.
      ```
 2. `bfs(DrzewoBinarne, ListaWierzchWszerz)`
+
+## Obchodzenie grafu
+
+1. Znajdź wierzchołki osiągalne w grafie (możliwe cykle!) używając BFS.
+2. Odwrotna osiągalność: znajdź wierzchołki z których osiągalny jest jakiś wierzchołek z podanej listy.
+3. Porównaj różne sposoby inicjalizacji listy wierzchołków odwiedzonych (pusta, wierzchołki startowe).
