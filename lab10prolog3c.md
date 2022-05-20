@@ -59,5 +59,18 @@ Podobną ideę możemy zastosować w poniższym zadaniu - próba wyjęcia elemen
 
      Sprawdź, co się stanie gdy pominiemy sprawdzenie `var(Kolejka)`.
 
-
+     Mozna też uzyć `empty(X-X1) :- unify_with_occurs_check(X,X1)`.
+     
+     Przykład:
+     
+     ```
+     ?- empty(Q0), put(1, Q0, Q1), put(2,Q1,Q2), get(E1,Q2,Q3), get(E2,Q3,Q4), empty(Q4).
+     Q0 = [1, 2|_A]-[1, 2|_A],
+     Q1 = [1, 2|_A]-[2|_A],
+     Q2 = [1, 2|_A]-_A,
+     E1 = 1,
+     Q3 = [2|_A]-_A,
+     E2 = 2,
+     Q4 = _A-_A.
+     ```
 2. `bfs(DrzewoBinarne, ListaWierzchWszerz)`
