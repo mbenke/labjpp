@@ -5,6 +5,18 @@
         (zamknięcie drzewa otwartego)
     * `createBST(Lista, DrzewoBST-Zamknięte)`
 
+    **Uwaga:** predykatów `@</2` i `@>/2` należy uzywać na termach ustalonych, inaczej można otrzymać nieoczekiwane rezultaty:
+    
+    ``` prolog    
+    ?- X @< a.
+    true.
+
+    ?- a @< X.
+    false.
+    ```
+    
+    Dlatego przydać się tu mogą prdykaty `var/1` i `nonvar/1`.
+    
 2. Informacje o pewnej funkcji (o skończonej dziedzinie i  przeciwdziedzinie D), są dane w postaci definicji predykatu:
     ```
         wf(x, y)  <==>  f(x) = y.
