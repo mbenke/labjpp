@@ -15,7 +15,29 @@
     false.
     ```
     
-    Dlatego przydać się tu mogą prdykaty `var/1` i `nonvar/1`.
+    Dlatego przydać się tu mogą predykaty `var/1` i `nonvar/1`.
+    
+ **Przykłady:**
+ 
+ ``` prolog
+ ?- insertBST(b, D), insertBST(a,D), insertBST(a,D).
+D = n(n(_, a, _), b, _) ;
+false.
+
+?- insertBST(b, D), insertBST(a,D), insertBST(a,D), closeD(D).
+D = n(n(e, a, e), b, e) ;
+false.
+```
+
+Dla uproszczenia można podobny predykat napisać dla list:
+
+``` prolog
+?- ensuremember(1,L), ensuremember(2,L), ensuremember(1,L).
+L = [1, 2|_].
+
+?- ensuremember(1,L), ensuremember(2,L), ensuremember(1,L), closeL(L).
+L = [1, 2].
+```
     
 2. Informacje o pewnej funkcji (o skończonej dziedzinie i  przeciwdziedzinie D), są dane w postaci definicji predykatu:
     ```
