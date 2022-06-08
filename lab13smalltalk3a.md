@@ -87,11 +87,8 @@ Karta wszystkie asArray collect: [ :w | w printString]
 Teraz będziemy potrafili wylosować kartę: wylosujemy indeks [1..52] i zajrzymy do powyższej tablicy.
 
 ``` smalltalk
-Karta wszystkie at: (Random new nextInt: 52)
+Karta wszystkie at: (Random new nextInteger: 52)
 Dama karo
 ```
 
 (oczywiscie wylosowana karta może być inna).
-
-NB metoda `#nextInt` nie występuje standardowo w klasie Random - można ją dodać
-
