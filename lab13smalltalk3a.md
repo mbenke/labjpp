@@ -40,9 +40,6 @@ a SortedCollection(a Kolor a Kolor a Kolor a Kolor)
 
 Kolor kolory asSortedCollection collect: [:x | x asString]
 an OrderedCollection('trefl' 'karo' 'kier' 'pik')
-
-Kolor kolory asSortedCollection collect:  [ :k | k storeString ]
-an OrderedCollection('Kolor nazwa:  ''trefl'' wartosc: 1' 'Kolor nazwa:  ''karo'' wartosc: 2' 'Kolor nazwa:  ''kier'' wartosc: 3' 'Kolor nazwa:  ''pik'' wartosc: 4')
 ```
 (później poprawimy to tak, żeby nie trzeba było pisac fragmentu `collect: [:x | x asString]` - wymaga to zdefiniowania metody `printOn: aStream`)
 
