@@ -95,3 +95,6 @@ Dama karo
 ```
 
 (oczywiscie wylosowana karta może być inna).
+
+NB metoda `#nextInt` nie występuje standardowo w klasie Random - można ją dodać
+
