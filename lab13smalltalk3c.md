@@ -20,19 +20,15 @@ Metoda `#printOn:` wypisuje na strumień będący argumentem;
 w klasie `Object` wypisuje `an Object` (ew. nazwa klasy):
 
 ```
-printOn: target
-	"Append, to the <puttableStream>, target, a string whose characters are a 
-	the same as those which would result from sending a #printString
-	message to the receiver.
-	N.B. This is really intended for development use. #displayOn: and #displayString
-	are complementary methods for generating strings for presentation to an
-	end-user."
+printOn: aStream
+	"Append to the argument, aStream, a sequence of characters that  
+	identifies the receiver."
 
-	| name |
-	name := self class name.
-	target 
-		nextPutAll: (name first isVowel ifTrue: ['an '] ifFalse: ['a ']);
-		nextPutAll: name
+	| title |
+	title := self class name.
+	aStream
+		nextPutAll: (title first isVowel ifTrue: ['an '] ifFalse: ['a ']);
+		nextPutAll: title
 ```
 
 Podobnie sprawa ma się z metodą `#displayString`:
