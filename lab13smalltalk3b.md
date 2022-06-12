@@ -74,7 +74,7 @@ Random new next
 0.6133594264338535
 ```
 
-...ale nam potrzebne będzie losowanie liczb całkowitych. W klasie `Random` nie ma metody `nextInteger:`. Możemy stworzyć własną podklasę, albo dodac swoją metodę do klasy `Random`:
+...ale nam potrzebne będzie losowanie liczb całkowitych. W niektórych implementacjach, w klasie `Random` nie ma metody `nextInteger:`. Możemy stworzyć własną podklasę, albo dodac swoją metodę do klasy `Random`:
 
 ``` smalltalk
 nextInteger: m
