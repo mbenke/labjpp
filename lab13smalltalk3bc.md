@@ -104,7 +104,7 @@ talia size to: 2 by: -1 do: [ :i | | tmp |
 #('Krol trefl' '9 pik' 'Walet trefl' '6 pik' '7 karo' 'Walet karo' '3 pik' '8 kier' '2 pik' 'Krol karo' '10 kier' '2 trefl' 'Krol pik' 'As trefl' '9 kier' '5 kier' 'As pik' '5 karo' 'Walet kier' '4 pik' '8 pik' 'Dama trefl' '6 kier' '5 trefl' 'As kier' '2 kier' '3 trefl' '2 karo' '4 trefl' '10 trefl' 'Krol kier' '6 karo' 'Dama kier' 'Dama karo' '6 trefl' 'Dama pik' '9 trefl' '10 pik' '10 karo' '8 karo' '9 karo' '5 pik' 'As karo' '8 trefl' '4 kier' '7 pik' '7 kier' '3 karo' '4 karo' '7 trefl' 'Walet pik' '3 kier')
 ```
 
-Umieśćmy teraz to wszystko w klasie `Talia` z metodami `#tasuj`, `#collect:` i innymi potrzebnymi (możnaby dziedziczyć po Collection, ale wtedy trzeba zaimplementować metody #add:, #do: i #remove:ifAbsent:).
+Umieśćmy teraz to wszystko w klasie `Talia` z metodami `#tasuj`, `#removeFirst` i innymi potrzebnymi (możnaby dziedziczyć po Collection, ale wtedy trzeba zaimplementować metody #add:, #do: i #remove:ifAbsent:).
 
 ```
 Talia new
