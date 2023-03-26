@@ -1,32 +1,7 @@
 Uwaga: na poniższe zadania mozna przeznaczyć 3, a w miarę potrzeby i
 mozliwości nawet 4 zajęcia.
 
-## Zadanie 1. Monada List
-
-Funkcja
-
-    allPairs :: [a] -> [a] -> [[a]]
-    allPairs xs ys = [[x,y] | x <- xs, y <- ys]
-
-daje listę wszystkich list dwuelementowych, gdzie pierwszy element
-należy do pierwszego argumentu, drugi do drugiego, np.
-
-~~~~
-*Main> allPairs [1,2,3] [4,5]
-[[1,4],[1,5],[2,4],[2,5],[3,4],[3,5]]
-~~~~
-
- - przepisz na notację monadyczną
- - uogólnij te funkcję do `allCombinations :: [[a]] -> [[a]]`, która dla n-elementowej listy list da listę wszystkich n-elementowych list takich, że i-ty element należy do i-tego elementu argumentu, np
-
-~~~~
-Main> allCombinations [[1,2], [4,5], [6], [7]]  
-[[1,4,6,7],[1,5,6,7],[2,4,6,7],[2,5,6,7]]
-~~~~
-
-Jak najprościej zapisać `allCombinations` przy pomocy poznanych operacji monadycznych?
-
-## Zadanie 2. Reader
+## Zadanie 1. Reader
 
 a.
 
@@ -85,6 +60,31 @@ Map Var Int
 [(Var, Int)]
 Var -> Maybe Int
 ```
+
+## Zadanie 2. Monada List
+
+Funkcja
+
+    allPairs :: [a] -> [a] -> [[a]]
+    allPairs xs ys = [[x,y] | x <- xs, y <- ys]
+
+daje listę wszystkich list dwuelementowych, gdzie pierwszy element
+należy do pierwszego argumentu, drugi do drugiego, np.
+
+~~~~
+*Main> allPairs [1,2,3] [4,5]
+[[1,4],[1,5],[2,4],[2,5],[3,4],[3,5]]
+~~~~
+
+ - przepisz na notację monadyczną
+ - uogólnij te funkcję do `allCombinations :: [[a]] -> [[a]]`, która dla n-elementowej listy list da listę wszystkich n-elementowych list takich, że i-ty element należy do i-tego elementu argumentu, np
+
+~~~~
+Main> allCombinations [[1,2], [4,5], [6], [7]]  
+[[1,4,6,7],[1,5,6,7],[2,4,6,7],[2,5,6,7]]
+~~~~
+
+Jak najprościej zapisać `allCombinations` przy pomocy poznanych operacji monadycznych?
 
 ## Zadanie 3. Monada State
 
