@@ -105,15 +105,25 @@ możliwe dodatkowe wymaganie: ponumeruj wezly drzewa w kolejnosci infiksowej.
 (toList $ renumber $ fromList "Learn Haskell") == [0..12]
 ~~~~
 
-b. Rozszerzmy język z poprzedniego zadania o instrukcje języka Tiny
+b. Korzystając z monady State, napisz interpreter języka Tiny
 (patrz przedmiot Semantyka i Weryfikacja Programów)
 
 ~~~
-Stmt:   S ::= skip | x := e | S1;S2
-        | if b then S1 else S2 | while b do S
+Exp:    E ::= x | n | E + E | ...
+BExp:   B ::= E == E | ...
+Stmt:   S ::= skip | x := E | S1;S2
+        | if B then S1 else S2 | while B do S
 ~~~
 
-korzystając z wcześniej napisanej funkcji `evalExp`, napisz funkcję
+Można użyć np. typu
+
+``` haskell
+type IM a = State IntState a
+```
+
+gdzie `IntState` jest typem stanu interpretera.
+
+Napisz funkcję
 
 ~~~
 execStmt :: Stmt -> IO ()
