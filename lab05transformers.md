@@ -1,4 +1,4 @@
-## Zadanie 1
+### Zadanie 1
 
 W poprzednim tygodniu pisaliśmy interpreter dla wyrażeń arytmetycznych:
 
