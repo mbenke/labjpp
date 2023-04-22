@@ -121,25 +121,26 @@ true.
        podlisty zawierające odpowiednio kolejne elementy z parzystych
        (nieparzystych) pozycji
 
+    h) `prefiks(P, L)` wtw, gdy `P` jest prefiksem `L`
+    
+    i) `podlista(P, L)` wtw, gdy P jest spójną podlistą L
 
-    h) `podlista(P, L)` wtw, gdy P jest spójną podlistą L
-
-    i) `podciag(P, L)`  wtw, gdy P jest podciągiem L
+    j) `podciag(P, L)`  wtw, gdy P jest podciągiem L
        (czyli niekoniecznie spójną podlistą)
        (preferowane rozwiązanie: każdy podciąg wygenerowany jeden raz)
 
-    j) `wypisz(L)` == czytelne wypisanie elementów listy L, z zaznaczeniem
+    k) `wypisz(L)` == czytelne wypisanie elementów listy L, z zaznaczeniem
        jeśli lista pusta (np. elementy oddzielane przecinkami, po
        ostatnim elemencie kropka)
 
-    k) sortowanie przez wstawianie:
+    l) sortowanie przez wstawianie:
 
     ~~~
          insertionSort(Lista, Posortowana),
          insert(Lista, Elem, NowaLista)
     ~~~
 
-    l) Dodatkowo, być może do domu: `srodek(E, L)` wtw, gdy E jest środkowym elementem L
+    m) Dodatkowo, być może do domu: `srodek(E, L)` wtw, gdy E jest środkowym elementem L
        (lista nieparzystej długości; np. `srodek(3,[1,2,3,4,5])`)
 
    Uwagi:
