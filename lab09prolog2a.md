@@ -115,7 +115,7 @@ true.
 false.
 ```
 
-Napisz funkcję  `enumFromTo(M, N, L)` podobnie jak w Haskellu, n.p.
+Napisz predykat `enumFromTo(M, N, L)` ,który dla ustalonych `M,N` działa podobnie podobnie jak analogiczna funkcja w Haskellu, n.p.
 
 ```
     ?- enumFromTo(1,0,L).
@@ -149,6 +149,8 @@ true.
 
 ?- 1+1 < 2+2.
 true.
+enumFromTo(M,N, []) :- M > N, !.
+enumFromTo(M,N, [M|L]) :- M =< N, M1 is M+1, enumFromTo(M1,N,L).
 
 ?- X < 1+1.
 ERROR: Arguments are not sufficiently instantiated
