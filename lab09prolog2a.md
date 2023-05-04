@@ -134,8 +134,6 @@ L = [1, 2, 3, 4, 5, 6, 7, 8, 9] ;
 L = [1, 2, 3, 4, 5, 6, 7, 8, 9|...] ;
 ```
 
-(patrz przykład z silnią z wykładu).
-
 ## Porównania
 
 `T < U` odnosi sukces, jeśli T i U są termami ustalonymi reprezentującym wyrażenia arytmetyczne i wartość `T` jest mniejsza niż wartość `U`
@@ -149,8 +147,6 @@ true.
 
 ?- 1+1 < 2+2.
 true.
-enumFromTo(M,N, []) :- M > N, !.
-enumFromTo(M,N, [M|L]) :- M =< N, M1 is M+1, enumFromTo(M1,N,L).
 
 ?- X < 1+1.
 ERROR: Arguments are not sufficiently instantiated
