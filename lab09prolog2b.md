@@ -150,12 +150,12 @@ Zdefiniować predykaty:
       dwa warianty:  (*) n > 0  (**) n >= 0
       (np. `slowo([a,a,b,b])` - sukces)
 
- g) slowo(Zdanie, Reszta) == Zdanie = Slowo * Reszta, Slowo - jw.
-      (np. `slowo([a,a,b,b,c,d], [c,d])` - sukces)
+ g) `slowo(Zdanie, Reszta) == Zdanie = Slowo * Reszta`, `Slowo` - jw.
+ (np. `slowo([a,a,b,b,c,d], [c,d])` - sukces)
 
  h) `flagaPolska(Lista, Flaga)` wtw, gdy Flaga jest posortowaną listą Lista, złożoną ze stałych b,c
-
-      (np. `flagaPolska([b,c,b,c], [b,b,c,c])` - sukces)
+ 
+ (np. `flagaPolska([b,c,b,c], [b,b,c,c])` - sukces)
 
 - rozwiazanie naiwne, bez akumulatora, wielokrotny `append` (koszt kwadratowy)
 - dwa akumulatory (koszyki Dijkstry), jednokrotnie `append`
