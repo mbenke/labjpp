@@ -13,7 +13,7 @@ Reprezentacja grafów: zbiory krawędzi, czyli
 ```
 ?- listing(edge).
 ERROR: procedure `edge' does not exist (DWIM could not correct goal)
-?- assertz(edge(a,b)).
+?- assertz(edge(a,b)).euler(Graf, Euler's Path)
 true.
 
 ?- assertz(edge(b,c)).
@@ -170,7 +170,7 @@ P = [a, c, d] ;
 false.
 ```
 
-  d) `euler/?` - czy dany graf nieskierowany jest grafem Eulera, czyli  znalezienie (sprawdzenie) ścieżki Eulera (wprost z definicji):            ścieżka, która przechodzi przez każdą krawędź grafu dokładnie raz.
+  d) `euler(+Graf, ?EulerPath)` - czy dany graf nieskierowany jest grafem Eulera, czyli  znalezienie (sprawdzenie) ścieżki Eulera (wprost z definicji):            ścieżka, która przechodzi przez każdą krawędź grafu dokładnie raz.
 
   Dla uproszczenia mozna zacząc z grafem skierowanym, ale uwaga: krawędź nieskierowana `a <-> b` to nie to samo co dwie krawędzie `a -> b, b -> a`.
   
