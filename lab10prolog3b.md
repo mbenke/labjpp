@@ -103,6 +103,9 @@ Zdefiniować predykaty:
 
   a) `connect(A,B)` (reprezentacja klauzulowa), `connect(Graf,A,B)` (reprezentacja termowa) wtw, gdy istnieje ścieżka z A do B.        
        Uwaga: ścieżka = niepusty (!) ciąg krawędzi
+       
+   Ścieżka z A do B istnieje wtw gdy istnieje krawędź z A do B lub istnieje C takie, że istnieje krawędź z A  do C i ścieżka z C do B.
+   Uwaga na kolejność klauzul i atomów w klauzuli.
 
   b) `path(A,B,P)` wtw, gdy P = opis ścieżki z A do B,
                       tzn. `P = [A, ..., B]`
