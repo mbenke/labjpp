@@ -13,7 +13,7 @@ Reprezentacja grafów: zbiory krawędzi, czyli
 ```
 ?- listing(edge).
 ERROR: procedure `edge' does not exist (DWIM could not correct goal)
-?- assertz(edge(a,b)).euler(Graf, Euler's Path)
+?- assertz(edge(a,b)).
 true.
 
 ?- assertz(edge(b,c)).
