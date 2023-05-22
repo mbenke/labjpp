@@ -10,9 +10,7 @@ Kompilacja:
 
 ```
 $ echo "compile('mojProgram.pl'). save_program('mojProgram.sav')." | sicstus
-
-SICStus 4.6.0 (x86_64-linux-glibc2.17): Mon Apr  6 09:23:37 PDT 2020
-Licensed to acSP4.6mimuw.edu.pl
+...
 % compiling /home/staff/iinf/ben/Zajecia/Jpp/Prolog/mojProgram.pl...
 % compiled /home/staff/iinf/ben/Zajecia/Jpp/Prolog/mojProgram.pl in module user, 71 msec 592368 bytes
 yes
@@ -47,7 +45,7 @@ W trybie interaktywnym argumenty można przekazać przy poomocy opcji `-a`, np:
 
 ```
 $ sicstus -l args.pl -a ala ma kota
-
+...
 | ?- main.
 [ala,ma,kota]
 yes
