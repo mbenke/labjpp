@@ -1,4 +1,4 @@
-Program wykonywalny dla SICStus Prolog
+## Program wykonywalny dla SICStus Prolog
 
 Umieść w swoim programie dyrektywę `user:runtime_entry(start)`, np
 
@@ -34,8 +34,26 @@ Wykonanie:
 $ ./mojProgram 
 Boo!
 ```
+## Argumenty programu
+Do odczytania arumentów można użyć `prolog_flag(argv, Args)`
 
-Przykładowy Makefile:
+```
+main :- prolog_flag(argv, Args), write(Args), nl.
+
+user:runtime_entry(start) :- main.
+```
+
+W trybie interaktywnym argumenty można przekazać przy poomocy opcji `-a`, np:
+
+```
+$ sicstus -l args.pl -a ala ma kota
+
+| ?- main.
+[ala,ma,kota]
+yes
+```
+
+## Przykładowy Makefile
 
 ```
 SICSTUSHOME=/opt/sicstus
