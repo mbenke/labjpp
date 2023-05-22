@@ -22,7 +22,7 @@ Linkowanie:
 
 
 ```
-$ spld --static mojProgram.sav -o mojProgram
+$ spld --static mojProgram.sav --exechome=/opt/sicstus/bin -o mojProgram mojProgram.sav
 Created "mojProgram"
 ```
 
@@ -58,7 +58,7 @@ SICSTUSHOME=/opt/sicstus
 SICSTUSBIN= $(SICSTUSHOME)/bin
 PL = $(SICSTUSBIN)/sicstus
 SPLD = spld
-SPLDFLAGS = --static 
+SPLDFLAGS = --static --exechome=$(SICSTUSBIN)
 
 BINFILES = mojProgram
 
