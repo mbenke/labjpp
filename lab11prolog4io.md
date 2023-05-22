@@ -12,6 +12,7 @@
       * `read(Term)` - wczytanie (z bieżącego pliku wejściowego, domyślnie stdin) dowolnego
           (poprawnego składniowo) termu, zakończonego kropką;
           np. `read(program(ListaInstrukcji))`
+      * zmiana znaku zachęty ze standardowego `|:` przy użyciu `prompt/2`; np. `prompt(_,' ')`
       * `compile(NazwaPliku)` - wczytanie klauzul z pliku, np `compile(`graph.txt`).
  
 3. (Elementarne) operacje na plikach
