@@ -43,8 +43,14 @@
     - funkcję odwracającą listę (`rev' xs ys = rev xs ++ ys`)
     - liczby Fibonacciego (trochę trudniejsze)
 
+4. Napisz ``bezpieczne'' warianty funkcji `head', `tail', `last', dające `Nothing` dla listy pustej.
+    ``` haskell
+    safeHead :: [a] -> Maybe a
+    safeTail :: [a] -> Maybe [a]
+    safeLast :: [a] -> Maybe a
+    ```
 
-4. Napisz funkcję
+6. Napisz funkcję
 
     ~~~~
     indexOf :: Char -> String -> Maybe Int
@@ -74,7 +80,7 @@
     []
     ~~~~
 
-5. Ćwiczymy funkcje wyzszego rzedu
+7. Ćwiczymy funkcje wyzszego rzedu
 
     a. Napisz funkcje
     ```
@@ -98,7 +104,7 @@
     d. Napisz funkcję obliczającą iloczyn skalarny dwóch list liczb; użyj `zipWith`
 
 
-6. Zapoznać się z [Data.Map](http://hackage.haskell.org/package/containers-0.5.6.3/docs/Data-Map-Lazy.html)
+8. Zapoznać się z [Data.Map](http://hackage.haskell.org/package/containers-0.5.6.3/docs/Data-Map-Lazy.html)
 
 
 ~~~
