@@ -1,4 +1,4 @@
-1. Napisz funkcję `triples  :: Int -> [(Int,Int,Int)]`, która dla argumentu n da listę wszystkich trójek liczb laturalnych o elementach z `[1..n]`
+1. Napisz funkcję `triples  :: Int -> [(Int,Int,Int)]`, która dla argumentu n da listę wszystkich trójek liczb naturalnych o elementach z `[1..n]`
 
 2. Napisz funkcję `triads :: Int -> [(Int,Int,Int)]`, ktora da liste trojek pitagorejskich  ($x^2 + y^2 = z^2$ dla x,y,z <= n)
 
@@ -50,7 +50,7 @@
     indexOf :: Char -> String -> Maybe Int
     ~~~~
 
-    taką, że jeśli c wystepuje w s na pozycji n, to (indexOf c s)  == Just n, wpp Nothing, np
+    taką, że jeśli c wystepuje w s na pozycji n, to `(indexOf c s)  = Just n`, wpp `Nothing`, np
 
     ~~~~
     *Main> indexOf 'a' "Ala"
@@ -65,7 +65,7 @@
     positions :: Char -> String -> [Int]
     ~~~~
 
-    taką, że (positions c s) daje listę wszystkich pozycji, na których c wystepuje w s, np.
+    taką, że `(positions c s)` daje listę wszystkich pozycji, na których c wystepuje w s, np.
 
     ~~~~
     *Main> positions 'a' "Ala ma kota"
