@@ -43,7 +43,7 @@
     - funkcję odwracającą listę (`rev' xs ys = rev xs ++ ys`)
     - liczby Fibonacciego (trochę trudniejsze)
 
-4. Napisz ``bezpieczne'' warianty funkcji `head', `tail', `last', dające `Nothing` dla listy pustej.
+4. Napisz ``bezpieczne'' warianty funkcji `head`, `tail`, `last`, dające `Nothing` dla listy pustej.
     ``` haskell
     safeHead :: [a] -> Maybe a
     safeTail :: [a] -> Maybe [a]
