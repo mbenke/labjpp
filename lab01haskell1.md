@@ -21,8 +21,28 @@
 
 3. Można zrobic 
  + liczenie liczb pierwszych na rozne sposoby
- +Liczby Fibonacciego
+ + Liczby Fibonacciego
  + Rekursja ogonowa -- silnia z akumulatorem, liczby Fibbonacciego, reverse
+   
+    Funkcję obliczającą sumę listy
+    ``` haskell
+    sum1 [] = 0
+    sum1 (x:xs) = x + sum xs
+    ```
+    możemy uogólnić do
+    ``` haskell
+    -- sum2 m xs = m + sum xs
+    sum2 m [] = m
+    sum2 m (x:xs) = sum2 (m+x) xs
+
+    sum3 = sum2 0
+    ```
+    Rekurencja w funkcji `sum2` jest "ogonowa", co odpowiada iteracji.
+    Napisz w podobny sposób
+    - silnię  (specyfikacja: `fac' n m= n!*m`)
+    - funkcję odwracającą listę (`rev' xs ys = rev xs ++ ys`)
+    - liczby Fibonacciego (trochę trudniejsze)
+
 
 4. Napisz funkcję
 
