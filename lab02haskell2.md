@@ -182,7 +182,7 @@ d. Można dopisać liczenie pochodnej względem danej zmiennej:
 deriv :: String -> Exp -> Exp
 ~~~~
 
-## Zadanie 4
+## Zadanie 5
 
 a.Uzupełnij instancje klasy Functor dla Either e:
 
@@ -219,7 +219,7 @@ i jej instancje dla list, Maybe, Tree
 
 
 
-## Zadanie 5 (opcjonalne, dla znudzonych)
+## Zadanie 6 (opcjonalne, dla znudzonych)
 
 Zdefiniuj klasę 
 
