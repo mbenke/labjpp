@@ -211,8 +211,9 @@ z użyciem `fmap`
 
 d. Zdefiniuj klasę Pointed (funkcyjnych pojemników z singletonem)
 
+    import Prelude hiding(Applicative(..))
     class Functor f => Pointed f where
-      ppure :: a -> f a
+      pure :: a -> f a
  
 i jej instancje dla list, Maybe, Tree
 
@@ -220,12 +221,10 @@ i jej instancje dla list, Maybe, Tree
 
 ## Zadanie 5 (opcjonalne, dla znudzonych)
 
-
-FIXME: to zadanie nie ma sensu w nowych werjsach GHC
-
 Zdefiniuj klasę 
 
 ~~~~
+import Prelude hiding(Applicative(..))
 infixl 4 <*>
 class Pointed f => Applicative f where
   (<*>) :: f(a->b) -> f a -> f b 
