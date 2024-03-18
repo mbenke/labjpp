@@ -1,9 +1,19 @@
 ## Zadanie 1
 W poprzednim tygodniu pisaliśmy funkcje
 
+``` haskell
     readInts2 :: String -> Either String [Int]
     sumInts :: String -> String
+```
 
+```
+*Main> readInts2 "1 23 456 abc 9"
+Left "Not a number: abc"
+*Main> sumInts "1 23 456 abc 9"
+"Not a number: abc"
+*Main> sumInts "1 2 3"
+"6"
+```
 Zamiast `case ... of {Left -> ...; Right -> ...}` użyj w nich operacji monadycznych lub `do`. Można  też użyć `readMaybe` lub `readEither`.
 
 ```
@@ -14,16 +24,6 @@ Prelude Text.Read> :t readEither
 readEither :: Read a => String -> Either String a
 ```
 
-(Uwaga: w tym zadaniu raczej nadal tworzymy funkcje `String -> String` i korzystamy z `interact` niż bezpośrednio z IO, chyba że ktoś bardzo chce)
-
-```
-*Main> readInts2 "1 23 456 abc 9"
-Left "Not a number: abc"
-*Main> sumInts "1 23 456 abc 9"
-"Not a number: abc"
-*Main> sumInts "1 2 3"
-"6"
-```
 
 ## Zadanie 2
 
@@ -42,7 +42,6 @@ eval (Div x y) = do
     m <- eval y
     safediv n m 
 ```
-(alternatywnie `eval (Div x y) = safediv <$> eval x <*> eval y`).
 
 uzupełnij ten przykład o inne operacje arytmetyczne.
 
