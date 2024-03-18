@@ -3,22 +3,24 @@ mozliwości nawet 4 zajęcia.
 
 ## Zadanie 1. Reader
 
-a.
+a. Dany typ drzew
 
-~~~~
+``` haskell
  data Tree a = Empty | Node a (Tree a) (Tree a) deriving (Eq, Ord, Show)
-~~~~
+```
 
 Napisz funkcję
 
-    renumber :: Tree a -> Tree Int
-
+``` haskell
+  renumber :: Tree a -> Tree Int
+```
 która dla danego drzewa da drzewo, gdzie w każdym węźle przechowywana będzie głębokość tego węzła (odległość od korzenia).
 
 Porównaj rozwiązania z użyciem monady Reader i bez.
 
 b. Dane typy dla wyrażeń arytmetycznych
 
+``` haskell
     type Var = String
     data Exp = EInt Int
          | EOp  Op Exp Exp
@@ -26,14 +28,17 @@ b. Dane typy dla wyrażeń arytmetycznych
          | ELet Var Exp Exp  -- let var = e1 in e2
 
     data Op = OpAdd | OpMul | OpSub
+```
 
 Napisz funkcję 
 
+``` haskell
     evalExp :: Exp -> Int
+```
 
 ktora obliczy wartość takiego wyrażenia, np
 
-~~~
+``` haskell
 --
 --      let x =
 --          let y = 6 + 9
@@ -48,9 +53,9 @@ test = ELet "x" (ELet "y" (EOp OpAdd (EInt 6) (EInt 9))
     where x = EVar "x"
           y = EVar "y"
 
-~~~
+```
 
-(można też uzyć typu wyrażeń z jednego z poprzednich labów)
+(można też użyć typu wyrażeń z jednego z poprzednich labów)
 
 Użyj monady czytelnika środowiska (Reader). Środowisko może być
 np. jednego z typów
@@ -90,12 +95,15 @@ Jak najprościej zapisać `allCombinations` przy pomocy poznanych operacji monad
 
 a. Dany typ drzew
 
-    data Tree a = Empty | Node a (Tree a) (Tree a) deriving (Eq, Ord, Show)
+``` haskell
+data Tree a = Empty | Node a (Tree a) (Tree a) deriving (Eq, Ord, Show)
+```
 
 Napisz funkcję
 
-    renumberTree :: Tree a -> Tree Int
-
+``` haskell 
+renumberTree :: Tree a -> Tree Int
+```
 która ponumeruje wezly drzewa tak, ze kazdy z nich bedzie mial inny numer.
 Porownaj rozwiazania z uzyciem monady State i bez.
 
@@ -125,9 +133,9 @@ gdzie `IntState` jest typem stanu interpretera.
 
 Napisz funkcję
 
-~~~
+``` haskell
 execStmt :: Stmt -> IO ()
-~~~
+```
 
 która wykona podaną instrukcję (program) i wypisze stan końcowy (w tym
 wypadku wartości zmiennych)
