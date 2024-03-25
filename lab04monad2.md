@@ -81,8 +81,8 @@ należy do pierwszego argumentu, drugi do drugiego, np.
 [[1,4],[1,5],[2,4],[2,5],[3,4],[3,5]]
 ~~~~
 
- - przepisz na notację monadyczną
- - uogólnij te funkcję do `allCombinations :: [[a]] -> [[a]]`, która dla n-elementowej listy list da listę wszystkich n-elementowych list takich, że i-ty element należy do i-tego elementu argumentu, np
+ - zapisz `allPairs` przy użyciu `do` w monadzie list.
+ - uogólnij tę funkcję do `allCombinations :: [[a]] -> [[a]]`, która dla n-elementowej listy list da listę wszystkich n-elementowych list takich, że i-ty element należy do i-tego elementu argumentu, np
 
 ~~~~
 Main> allCombinations [[1,2], [4,5], [6], [7]]  
