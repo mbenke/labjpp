@@ -23,7 +23,7 @@ b. Dane typy dla wyrażeń arytmetycznych
 ``` haskell
     type Var = String
     data Exp = EInt Int
-         | EOp  Op Exp Exp
+         | EOp  Op Exp Exp   --  albo EAdd Exp Exp  | ESub Exp Exp | ...
          | EVar Var
          | ELet Var Exp Exp  -- let var = e1 in e2
 
