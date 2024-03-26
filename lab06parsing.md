@@ -5,6 +5,7 @@ Na własnym komputerze:
 * o ile ktoś instalował GHC przy użyciu `ghcup` (patrz Lab Haskell 0), można zainstalować BNFC używając polecenia
 
 ```
+cabal install --lib array
 cabal install alex happy BNFC
 ```
 
