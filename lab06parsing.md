@@ -27,7 +27,7 @@ W razie problemów polecam pracę na `students`, gdzie jest zainstalowany BNFC, 
 * Uruchom przykładowy parser w BNFC  z wykładu:
 
 ```
-$ stack install alex happy BNFC
+$ cabal install alex happy BNFC
 
 $ cat Exp0.cf
 EAdd . Exp  ::= Exp "+" Exp1;
@@ -111,6 +111,9 @@ Sugestie: standardowa notacja infiksowa oraz notacja prefiksowa a la Lisp: (* (+
 
 b. Napisz i uruchom parser dla powyższej składni konkrentej przy użyciu BNFC  (składnia abstrakcyjna nie musi być idetyczna, BNFC w pewnym sensie narzuca składnię abstrakcyjną).
 
+c. Połącz z napisanym wcześniej ewaluatorem takich wyrażeń.
+
+<!--
 c. napisz parser dla tej składni przy uzyciu `Text.Parsec`
 
 UWAGA: Ze względów wydajnościowych, operator (<|>) z biblioteki Parsec
@@ -120,7 +123,7 @@ produkcji, które mają wspólny (niepusty) prefiks.
 Możemy odzyskać niedeterminizm przy pomocy kombinatora try, np.
 
     try p <|> q
-
+-->
 
 ## Zadanie 2
 Napisz parser dla swojego języka (dowolną techniką). Dla parsera LR (BNFC, Happy, etc.) zwróć uwagę na konflikty.
@@ -153,7 +156,7 @@ State 6
 
 	%eof           reduce using rule 3
 
-$ sed  's/happy --ghc --coerce --array --info/happy --ghc --coerce --array --info --debug/' Makefile > Makefile.debug
+$ sed  's/--array --info --ghc --coerce/--array --info --ghc --coerce --debug/' Makefile > Makefile.debug
 # lub dla starszych wersji BNFC
 $ sed  's/happy -gca/happy -gcad/' Makefile > Makefile.debug
 
