@@ -129,7 +129,7 @@ Można użyć np. typu
 type IM a = State IntState a
 ```
 
-gdzie `IntState` jest typem stanu interpretera.
+gdzie `IntState` jest typem stanu interpretera (na początek jak poprzednio - na przykład `Map Var Int` lub `[(Var,Int)]`, ale potem może być bardziej złożony.
 
 Napisz funkcję
 
