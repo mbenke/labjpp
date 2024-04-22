@@ -129,18 +129,7 @@ true.
        (czyli niekoniecznie spójną podlistą)
        (preferowane rozwiązanie: każdy podciąg wygenerowany jeden raz)
 
-    k) `wypisz(L)` == czytelne wypisanie elementów listy L, z zaznaczeniem
-       jeśli lista pusta (np. elementy oddzielane przecinkami, po
-       ostatnim elemencie kropka)
-
-    l) sortowanie przez wstawianie:
-
-    ~~~
-         insertionSort(Lista, Posortowana),
-         insert(Lista, Elem, NowaLista)
-    ~~~
-
-    m) Dodatkowo, być może do domu: `srodek(E, L)` wtw, gdy E jest środkowym elementem L
+    k) Dodatkowo, być może do domu: `srodek(E, L)` wtw, gdy E jest środkowym elementem L
        (lista nieparzystej długości; np. `srodek(3,[1,2,3,4,5])`)
 
    Uwagi:
