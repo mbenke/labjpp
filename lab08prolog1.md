@@ -146,4 +146,7 @@ true.
    Uwagi:
  
      - w tym zadaniu nie używamy jeszcze arytmetyki (nie trzeba)
-     - poszukiwane rozwiązanie o koszcie liniowym.
+     - poszukiwane rozwiązanie o koszcie liniowym
+
+
+Należy wziąć pod uwagę (i przetestować) różne sposoby wywołania definiowanych predykatów, czyli nie tylko `element(1,[1,2])` czy `podciag([1,3], [1,2,3])` ale też `element(X,[1,2])` czy `podciag(Xs, [1,2,3])`
