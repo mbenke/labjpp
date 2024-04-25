@@ -155,7 +155,7 @@ Analogicznie `>, >=, =<`. Porównania dla równości wyrazeń arytmetycznych `=:
 
 ### Porównania bez arytmetyki
 
-Operatory '@< @> @>= @=<', np.
+Operatory `@< @> @>= @=<`, np.
 
 ```
 ?- c @< b.
