@@ -153,6 +153,18 @@ ERROR: Arguments are not sufficiently instantiated
 ```
 Analogicznie `>, >=, =<`. Porównania dla równości wyrazeń arytmetycznych `=:=` oraz `=\=`
 
+### Porównania bez arytmetyki
+
+Operatory '@< @> @>= @=<', np.
+
+```
+?- c @< b.
+false.
+
+?- c @> b.
+true.
+```
+
 ### Ćwiczenie
 * sortowanie przez wstawianie:
 ```
