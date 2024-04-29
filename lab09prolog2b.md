@@ -17,7 +17,7 @@ addone [] = []
 addone (x:xs) = (x+1):addone xs
 ```
 
-Wynika to z faktu, ze w Prologu najpierw następuje uzgodnienie obu list w głowie klauzuli, potem uzgodnienie `Y` z wartością `X+1`, a a końcu `addone Xs Ys`.
+Wynika to z faktu, ze w Prologu najpierw następuje uzgodnienie obu list w głowie klauzuli, potem uzgodnienie `Y` z wartością `X+1`, a a końcu `addone(Xs, Ys)`.
 Taką rekursję nazywamy "ogonowa modulo cons" (tail recursion modulo cons).
 
 Spróbujmy napisać predykat `suma(L,N)`, który odnosi sukces gdy  `N` jest sumą elementów `L`
@@ -78,19 +78,20 @@ w Prologu nie jest to potrzebne - `suma/2` i `suma/3` to różne predykaty.
 
 Patrz też https://www.swi-prolog.org/pldoc/man?section=string
 
+Tradycyjnie w Prologu napisy to listy znaków.
 SWI Prolog ma swoiste podejście do napisów, odmienne od innych implementacji Prologu:
 ```
 $ swipl
-?- L=`kajak`.
-L = [107, 97, 106, 97, 107].
-
 ?- L="kajak".
 L = "kajak".
+
+?- L=`kajak`.
+L = [107, 97, 106, 97, 107].
 
 ?- string_chars("kajak", X).
 X = [k, a, j, a, k].
 ```
-NB w pierwszym przykładzie odwrócone apostrofy (w zwykłych apostrofach - atomy).
+NB w drugim przykładzie odwrócone apostrofy (w zwykłych apostrofach - atomy).
 
 Tradycyjne podejście do napisów jako list bajtów możemy odzyskać z opcją `--traditional`:
 
