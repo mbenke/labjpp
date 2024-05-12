@@ -157,7 +157,7 @@ Aby uniknac pętli, trzeba pamietać liste odwiedzonych wierzchołków.
 
 Aby uniknąć zapętlenia, trzeba pamietać liste odwiedzonych wierzchołków. W SICStus Prolog jest predykat `nonmember/2`, w SWI trzeba uzyć `\+member(...)`.
 
-`pathC(X, Y, P) :-  pathC(X, Y, Visited, P)` ale jak zainicjować Visited?
+`pathC(A, B, P) :-  pathC(A, B, Visited, P)` ale jak zainicjować Visited?
   * `Visited=[]`
   * `Visited=[A]`
 wybróbuj te sposoby i zobacz, czym się róznią.
