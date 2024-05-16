@@ -18,3 +18,14 @@
 3. (Elementarne) operacje na plikach
      - otwarcie pliku (do czytania):    see(NazwaPliku)
      - zamknięcie pliku (do czytania):  seen
+
+4. Kompilacja programu (SWI-Prolog)
+   ```
+   swipl -g start -c program.pl -o program
+   ```
+   gdzie w miejsce `start` wstawiamy (zeroargumentowy predykat), od którego ma sie rozpocząć wykonanie
+
+5. Argumenty programu
+   ```
+   start :- prolog_flag(argv, Args), write(Args), nl.
+   ```
