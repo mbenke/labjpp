@@ -29,3 +29,37 @@
    ```
    start :- prolog_flag(argv, Args), write(Args), nl.
    ```
+6. Kompilacja programu (SICStus)
+```
+$ cat args.pl
+main :- prolog_flag(argv, Args), write(Args), nl.
+user:runtime_entry(start) :- main.
+
+$ echo "compile('args.pl'). save_program('args.sav')." | /opt/sicstus/sicstus4.8.0/bin/sicstus
+$ spld --static --exechome=/opt/sicstus/sicstus4.8.0/bin args.sav -o args 
+$ ./args foo 'bar(1,2)' '2+3'
+[foo,bar(1,2),2+3]
+```
+
+Przykładowy Makefile:
+
+```
+SICSTUSHOME=/opt/sicstus/sicstus4.8.0
+SICSTUSBIN= $(SICSTUSHOME)/bin
+PL = $(SICSTUSBIN)/sicstus
+SPLD = spld
+SPLDFLAGS = --static --exechome=$(SICSTUSBIN)
+
+ALL = mojProgram
+
+all: $(ALL)
+
+%: %.sav
+	$(SPLD) $(SPLDFLAGS) $< -o $@ 
+
+%.sav: %.pl
+	echo "compile('$<'). save_program('$@')." | $(PL)
+
+clean:
+	rm -f $(ALL) *.sav
+```
