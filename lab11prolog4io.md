@@ -63,3 +63,30 @@ all: $(ALL)
 clean:
 	rm -f $(ALL) *.sav
 ```
+
+
+## Ćwiczenie
+
+Napisz program, który wczyta plik o nazwie podanej jako argument ,postaci
+
+```
+variables(ListaNazwZmiennychProstych).
+arrays(ListaNazwZmiennychTablicowych).
+program(ListaInstrukcji).
+```
+
+i wypisze go na stdout
+
+Przykładowy plik:
+
+```
+vars([k]).
+arrays([chce]).
+program([assign(arr(chce, pid), 1),
+	 assign(k, pid),
+         condGoto(arr(chce, 1-pid) = 0, 5),
+	 condGoto(k = pid, 3),
+         sekcja,
+	 assign(arr(chce, pid), 0),
+	 goto(1)]).
+```
