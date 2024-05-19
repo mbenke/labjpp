@@ -65,9 +65,9 @@ clean:
 ```
 
 
-## Ćwiczenie
+## Ćwiczenia
 
-Napisz program, który wczyta plik o nazwie podanej jako argument ,postaci
+1. Napisz program, który wczyta plik o nazwie podanej jako argument ,postaci
 
 ```
 variables(ListaNazwZmiennychProstych).
@@ -77,7 +77,7 @@ program(ListaInstrukcji).
 
 i wypisze go na stdout
 
-Przykładowy plik:
+Przykładowy plik (peterson.txt):
 
 ```
 vars([k]).
@@ -89,4 +89,15 @@ program([assign(arr(chce, pid), 1),
          sekcja,
 	 assign(arr(chce, pid), 0),
 	 goto(1)]).
+```
+
+2. Napisz predykat `initState(+Program, +N, -StanPoczątkowy)` realizujący inicjalizację stanu zmiennych i tablic dla wczytanego programu.
+(reprezentacje stanu trzeba będzie później rozszerzyć, ale to ćwiczenie moze stanowić  dobry punkt wyjścia).
+
+3. Napisz predykat `eval(+Expr, +State, ?PrId, -Value)` tak, aby 
+
+```
+?- initState(2,'peterson.txt',State), eval(k+1,State,1,Result).
+State = state([var(k, 0)], [arr(chce, 0, 0)], [1, 1]),
+Result = 1 .
 ```
