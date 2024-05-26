@@ -2,7 +2,7 @@
 
 ## Zadanie 1
 
-Zdefiniuj klasę `Stos` z obiektowymi metodami `#push:`, `#pop` i `#isEmpty`. Użyj listowej reprezentacji stosu.
+Zdefiniuj klasę `Stos` z obiektowymi metodami `#push:`, `#pop` i `#isEmpty`. Użyj listowej reprezentacji stosu (zdefiniuj pomocniczą klasę reprezentującą element listy).
 
 ## Zadanie 2
 
